@@ -2,6 +2,14 @@
     display: none;
 }
 
+#before {
+    background-color: coral;
+    box-shadow: 10px 10px 10px red;
+}
+
 #after {
     display: none;
+    font-family: cursive;
+    font-size: 20px;
+    background-image: linear-gradient(red, blue);
 }
