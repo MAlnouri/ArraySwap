@@ -37,7 +37,6 @@ window.onload = () => {
     //function rearranges words in the array
     wordSwap = (s) => {
         let newWord = "";
-        console.log(s);
         let arr = s.split('');
         const temp = arr[0];
         arr[0] = arr[arr.length - 1];
@@ -48,15 +47,19 @@ window.onload = () => {
         }
         swapped.push(newWord);
     }
-    wordSwap("apple");
-/*
-    arraySwap = (array) => {
-        for(let j = 0; j < array.length; j++)
-        let newArray = array.map(wordSwap(j));
 
-    }
+    const beforeSection = document.getElementById("before");
+    const afterSection = document.getElementById("after");
 
     hiddenButton.onclick = () => {
-
-    }*/
+        for(let j = 0; j < userWords.length; j++) {
+            console.log(userWords[j]);
+            wordSwap(userWords[j]);
+            console.log(swapped[j]);
+            const newList = document.getElementById('swapList');
+            addToList.appendToList(newList, swapped[j]);
+        }
+        beforeSection.style.display = "none";
+        afterSection.style.display = "block";
+    }
 }
